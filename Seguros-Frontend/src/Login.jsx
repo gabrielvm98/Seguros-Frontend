@@ -27,6 +27,7 @@ export default function Login({ setIsLoggedIn }) {
     <div className="card">
       <h2 className="card-title">Login</h2>
       <form onSubmit={handleLogin}>
+
         <div className="form-group">
           <label htmlFor="username" className="form-label">
             Username
@@ -40,6 +41,7 @@ export default function Login({ setIsLoggedIn }) {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="password" className="form-label">
             Password
@@ -53,6 +55,7 @@ export default function Login({ setIsLoggedIn }) {
             required
           />
         </div>
+        
         <button type="submit" className="btn btn-primary">
           Login
         </button>

@@ -13,25 +13,35 @@ export default function App() {
   return (
     <Router>
       <div className="app">
+
         <Navigation isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+
         <main className="container">
           <Routes>
-            <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+            <Route 
+              path="/login" 
+              element={<Login setIsLoggedIn={setIsLoggedIn} />} 
+            />
+
             <Route
               path="/create"
               element={isLoggedIn ? <CreatePolicy /> : <Navigate to="/login" />}
             />
+
             <Route
               path="/policies"
               element={isLoggedIn ? <PolicyList /> : <Navigate to="/login" />}
             />
+
             <Route
               path="/update/:id"
               element={isLoggedIn ? <UpdatePolicy /> : <Navigate to="/login" />}
             />
+
             <Route path="/" element={<Navigate to="/policies" />} />
           </Routes>
         </main>
+
       </div>
     </Router>
   )

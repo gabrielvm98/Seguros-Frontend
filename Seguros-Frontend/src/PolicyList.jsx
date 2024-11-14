@@ -12,9 +12,9 @@ export default function PolicyList() {
 
   const fetchPolicies = async () => {
     try {
-      // Replace with your actual API endpoint
       const response = await axios.get('http://localhost:8080/segurosAPI/v1/polizas')
-      setPolicies(response.data)
+      setPolicies(response.data.data)
+      console.log(policies)
     } catch (error) {
       console.error('Failed to fetch policies:', error)
     }
@@ -22,8 +22,7 @@ export default function PolicyList() {
 
   const handleDelete = async (id) => {
     try {
-      // Replace with your actual API endpoint
-      await axios.delete(`/api/policies/${id}`)
+      await axios.delete(`http://localhost:8080/segurosAPI/v1/polizas/${id}`)
       fetchPolicies()
     } catch (error) {
       console.error('Failed to delete policy:', error)
@@ -33,11 +32,12 @@ export default function PolicyList() {
   return (
     <div className="card">
       <h2 className="card-title">Insurance Policies</h2>
-      <div className="policy-list">
+      <div className="policy-list">        
         {policies.map((policy) => (
           <PolicyItem key={policy.id} policy={policy} onDelete={handleDelete} />
         ))}
       </div>
+      
       <div className="card-footer">
         <Link to="/create" className="btn btn-primary">
           Create New Policy

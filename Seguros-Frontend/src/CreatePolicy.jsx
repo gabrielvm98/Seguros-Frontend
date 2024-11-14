@@ -4,12 +4,17 @@ import axios from 'axios'
 
 export default function CreatePolicy() {
   const [policy, setPolicy] = useState({
-    type: '',
-    startDate: '',
-    expirationDate: '',
-    amount: '',
-    propertyAddress: '',
-    propertyArea: '',
+    tipo: '',
+    fechaInicio: '',
+    fechaVencimiento: '',
+    monto: '',
+    usuarioId: '',
+    marcaAuto: '',
+    modeloAuto: '',
+    direccionInmueble: '',
+    areaInmueble: '',
+    marcaCelular: '',
+    modeloCelular: ''
   })
   const navigate = useNavigate()
 
@@ -20,8 +25,7 @@ export default function CreatePolicy() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      // Replace with your actual API endpoint
-      await axios.post('/api/policies', policy)
+      await axios.post('http://localhost:8080/segurosAPI/v1/polizas', policy)
       navigate('/policies')
     } catch (error) {
       console.error('Failed to create policy:', error)
@@ -33,86 +37,176 @@ export default function CreatePolicy() {
       <h2 className="card-title">Create New Insurance Policy</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="type" className="form-label">
+          <label htmlFor="tipo" className="form-label">
             Type
           </label>
-          <input
-            id="type"
-            name="type"
+          <select
+            id="tipo"
+            name="tipo"
             className="form-input"
-            value={policy.type}
+            value={policy.tipo}
             onChange={handleChange}
             required
-          />
+          >
+            <option value="">Select type</option>
+            <option value="AUTO">AUTO</option>
+            <option value="INMUEBLE">INMUEBLE</option>
+            <option value="CELULAR">CELULAR</option>
+          </select>
         </div>
         <div className="form-group">
-          <label htmlFor="startDate" className="form-label">
+          <label htmlFor="fechaInicio" className="form-label">
             Start Date
           </label>
           <input
-            id="startDate"
-            name="startDate"
+            id="fechaInicio"
+            name="fechaInicio"
             type="date"
             className="form-input"
-            value={policy.startDate}
+            value={policy.fechaInicio}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="expirationDate" className="form-label">
+          <label htmlFor="fechaVencimiento" className="form-label">
             Expiration Date
           </label>
           <input
-            id="expirationDate"
-            name="expirationDate"
+            id="fechaVencimiento"
+            name="fechaVencimiento"
             type="date"
             className="form-input"
-            value={policy.expirationDate}
+            value={policy.fechaVencimiento}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="amount" className="form-label">
+          <label htmlFor="monto" className="form-label">
             Amount
           </label>
           <input
-            id="amount"
-            name="amount"
+            id="monto"
+            name="monto"
             type="number"
             className="form-input"
-            value={policy.amount}
+            value={policy.monto}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="propertyAddress" className="form-label">
-            Property Address
+          <label htmlFor="usuarioId" className="form-label">
+            User ID
           </label>
           <input
-            id="propertyAddress"
-            name="propertyAddress"
+            id="usuarioId"
+            name="usuarioId"
+            type="number"
             className="form-input"
-            value={policy.propertyAddress}
+            value={policy.usuarioId}
             onChange={handleChange}
             required
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="propertyArea" className="form-label">
-            Property Area
-          </label>
-          <input
-            id="propertyArea"
-            name="propertyArea"
-            className="form-input"
-            value={policy.propertyArea}
-            onChange={handleChange}
-            required
-          />
-        </div>
+
+        {/* Campos específicos de AUTO */}
+        {policy.tipo === 'AUTO' && (
+          <>
+            <div className="form-group">
+              <label htmlFor="marcaAuto" className="form-label">
+                Car Brand
+              </label>
+              <input
+                id="marcaAuto"
+                name="marcaAuto"
+                className="form-input"
+                value={policy.marcaAuto}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="modeloAuto" className="form-label">
+                Car Model
+              </label>
+              <input
+                id="modeloAuto"
+                name="modeloAuto"
+                className="form-input"
+                value={policy.modeloAuto}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </>
+        )}
+
+        {/* Campos específicos de INMUEBLE */}
+        {policy.tipo === 'INMUEBLE' && (
+          <>
+            <div className="form-group">
+              <label htmlFor="direccionInmueble" className="form-label">
+                Property Address
+              </label>
+              <input
+                id="direccionInmueble"
+                name="direccionInmueble"
+                className="form-input"
+                value={policy.direccionInmueble}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="areaInmueble" className="form-label">
+                Property Area (sq ft)
+              </label>
+              <input
+                id="areaInmueble"
+                name="areaInmueble"
+                className="form-input"
+                value={policy.areaInmueble}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </>
+        )}
+
+        {/* Campos específicos de CELULAR */}
+        {policy.tipo === 'CELULAR' && (
+          <>
+            <div className="form-group">
+              <label htmlFor="marcaCelular" className="form-label">
+                Phone Brand
+              </label>
+              <input
+                id="marcaCelular"
+                name="marcaCelular"
+                className="form-input"
+                value={policy.marcaCelular}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="modeloCelular" className="form-label">
+                Phone Model
+              </label>
+              <input
+                id="modeloCelular"
+                name="modeloCelular"
+                className="form-input"
+                value={policy.modeloCelular}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </>
+        )}
+
         <button type="submit" className="btn btn-primary">
           Create Policy
         </button>
