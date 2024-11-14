@@ -1,5 +1,5 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
 
 export default function Navigation({ isLoggedIn, setIsLoggedIn }) {
   const handleLogout = () => {
@@ -7,26 +7,26 @@ export default function Navigation({ isLoggedIn, setIsLoggedIn }) {
   }
 
   return (
-    <nav className="bg-blue-600 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-white text-2xl font-bold">
+    <nav className="navbar">
+      <div className="navbar-container container">
+        <Link to="/" className="navbar-brand">
           Insurance Policy Manager
         </Link>
         {isLoggedIn ? (
-          <div className="space-x-4">
-            <Link to="/create">
-              <Button variant="secondary">Create Policy</Button>
+          <div className="navbar-links">
+            <Link to="/create" className="btn btn-secondary">
+              Create Policy
             </Link>
-            <Link to="/policies">
-              <Button variant="secondary">View Policies</Button>
+            <Link to="/policies" className="btn btn-secondary">
+              View Policies
             </Link>
-            <Button onClick={handleLogout} variant="destructive">
+            <button onClick={handleLogout} className="btn btn-danger">
               Logout
-            </Button>
+            </button>
           </div>
         ) : (
-          <Link to="/login">
-            <Button variant="secondary">Login</Button>
+          <Link to="/login" className="btn btn-secondary">
+            Login
           </Link>
         )}
       </div>

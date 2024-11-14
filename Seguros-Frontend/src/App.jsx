@@ -1,19 +1,20 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import Navigation from './Navigation'
 import Login from './Login'
 import CreatePolicy from './CreatePolicy'
 import PolicyList from './PolicyList'
 import UpdatePolicy from './UpdatePolicy'
+import './styles.css'
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
+      <div className="app">
         <Navigation isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-        <main className="container mx-auto mt-4 p-4">
+        <main className="container">
           <Routes>
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route

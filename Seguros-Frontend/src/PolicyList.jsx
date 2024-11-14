@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import PolicyItem from './PolicyItem'
 
 export default function PolicyList() {
@@ -33,22 +31,18 @@ export default function PolicyList() {
   }
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
-      <CardHeader>
-        <CardTitle>Insurance Policies</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          {policies.map((policy) => (
-            <PolicyItem key={policy.id} policy={policy} onDelete={handleDelete} />
-          ))}
-        </div>
-        <div className="mt-4">
-          <Link to="/create">
-            <Button>Create New Policy</Button>
-          </Link>
-        </div>
-      </CardContent>
-    </Card>
+    <div className="card">
+      <h2 className="card-title">Insurance Policies</h2>
+      <div className="policy-list">
+        {policies.map((policy) => (
+          <PolicyItem key={policy.id} policy={policy} onDelete={handleDelete} />
+        ))}
+      </div>
+      <div className="card-footer">
+        <Link to="/create" className="btn btn-primary">
+          Create New Policy
+        </Link>
+      </div>
+    </div>
   )
 }
