@@ -13,7 +13,7 @@ export default function PolicyList() {
   const fetchPolicies = async () => {
     try {
       // Replace with your actual API endpoint
-      const response = await axios.get('/api/policies')
+      const response = await axios.get('http://localhost:8080/segurosAPI/v1/polizas')
       setPolicies(response.data)
     } catch (error) {
       console.error('Failed to fetch policies:', error)

@@ -8,9 +8,11 @@ export default function Login({ setIsLoggedIn }) {
   const navigate = useNavigate()
 
   const handleLogin = async (e) => {
-    e.preventDefault()
+    setIsLoggedIn(true)
+    navigate('/policies')
+
+    /*e.preventDefault()
     try {
-      // Replace with your actual API endpoint
       const response = await axios.post('/api/login', { username, password })
       if (response.data.success) {
         setIsLoggedIn(true)
@@ -18,7 +20,7 @@ export default function Login({ setIsLoggedIn }) {
       }
     } catch (error) {
       console.error('Login failed:', error)
-    }
+    }*/
   }
 
   return (
