@@ -18,11 +18,11 @@ export default function Navigation({ isLoggedIn, setIsLoggedIn }) {
         {isLoggedIn ? (
 
           <div className="navbar-links">
-            <Link to="/create" className="btn btn-secondary">
+            <Link to="/create" className="btn btn-primary">
               Crear Poliza
             </Link>
 
-            <Link to="/policies" className="btn btn-secondary">
+            <Link to="/policies" className="btn btn-primary">
               Ver Polizas
             </Link>
             
@@ -33,7 +33,7 @@ export default function Navigation({ isLoggedIn, setIsLoggedIn }) {
 
         ) : (
 
-          <Link to="/login" className="btn btn-secondary">
+          <Link to="/login" className="btn btn-primary">
             Inicio Sesion
           </Link>
 
