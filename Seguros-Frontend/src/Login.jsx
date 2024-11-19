@@ -25,12 +25,12 @@ export default function Login({ setIsLoggedIn }) {
 
   return (
     <div className="card">
-      <h2 className="card-title">Login</h2>
+      <h2 className="card-title">Inicio de Sesion</h2>
       <form onSubmit={handleLogin}>
 
         <div className="form-group">
           <label htmlFor="username" className="form-label">
-            Username
+            Usuario
           </label>
           <input
             id="username"
@@ -44,7 +44,7 @@ export default function Login({ setIsLoggedIn }) {
 
         <div className="form-group">
           <label htmlFor="password" className="form-label">
-            Password
+            Contraseña
           </label>
           <input
             id="password"
@@ -57,7 +57,7 @@ export default function Login({ setIsLoggedIn }) {
         </div>
         
         <button type="submit" className="btn btn-primary">
-          Login
+          Iniciar Sesion
         </button>
       </form>
     </div>

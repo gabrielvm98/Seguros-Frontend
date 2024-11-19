@@ -12,29 +12,29 @@ export default function Navigation({ isLoggedIn, setIsLoggedIn }) {
       <div className="navbar-container container">
 
         <Link to="/" className="navbar-brand">
-          Insurance Policy Manager
+          SegurAl: Gestor de Polizas de Seguros
         </Link>
 
         {isLoggedIn ? (
 
           <div className="navbar-links">
             <Link to="/create" className="btn btn-secondary">
-              Create Policy
+              Crear Poliza
             </Link>
 
             <Link to="/policies" className="btn btn-secondary">
-              View Policies
+              Ver Polizas
             </Link>
             
             <button onClick={handleLogout} className="btn btn-danger">
-              Logout
+              Cerrar Sesion
             </button>
           </div>
 
         ) : (
 
           <Link to="/login" className="btn btn-secondary">
-            Login
+            Inicio Sesion
           </Link>
 
         )}

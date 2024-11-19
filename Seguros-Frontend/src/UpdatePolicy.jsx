@@ -51,7 +51,7 @@ export default function UpdatePolicy() {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="tipo" className="form-label">
-            Type
+            Tipo
           </label>
           <input
             id="tipo"
@@ -64,7 +64,7 @@ export default function UpdatePolicy() {
         </div>
         <div className="form-group">
           <label htmlFor="fechaInicio" className="form-label">
-            Start Date
+            Fecha de Inicio
           </label>
           <input
             id="fechaInicio"
@@ -78,7 +78,7 @@ export default function UpdatePolicy() {
         </div>
         <div className="form-group">
           <label htmlFor="fechaVencimiento" className="form-label">
-            Expiration Date
+            Fecha de Vencimiento
           </label>
           <input
             id="fechaVencimiento"
@@ -92,7 +92,7 @@ export default function UpdatePolicy() {
         </div>
         <div className="form-group">
           <label htmlFor="monto" className="form-label">
-            Amount
+            Monto
           </label>
           <input
             id="monto"
@@ -109,7 +109,7 @@ export default function UpdatePolicy() {
           <>
             <div className="form-group">
               <label htmlFor="marcaAuto" className="form-label">
-                Car Brand
+                Marca de Auto
               </label>
               <input
                 id="marcaAuto"
@@ -121,7 +121,7 @@ export default function UpdatePolicy() {
             </div>
             <div className="form-group">
               <label htmlFor="modeloAuto" className="form-label">
-                Car Model
+                Modelo de Auto
               </label>
               <input
                 id="modeloAuto"
@@ -138,7 +138,7 @@ export default function UpdatePolicy() {
           <>
             <div className="form-group">
               <label htmlFor="direccionInmueble" className="form-label">
-                Property Address
+                Direccion de Inmueble
               </label>
               <input
                 id="direccionInmueble"
@@ -150,7 +150,7 @@ export default function UpdatePolicy() {
             </div>
             <div className="form-group">
               <label htmlFor="areaInmueble" className="form-label">
-                Property Area
+                Area de Inmueble
               </label>
               <input
                 id="areaInmueble"
@@ -167,7 +167,7 @@ export default function UpdatePolicy() {
           <>
             <div className="form-group">
               <label htmlFor="marcaCelular" className="form-label">
-                Cell Phone Brand
+                Marca de Celular
               </label>
               <input
                 id="marcaCelular"
@@ -179,7 +179,7 @@ export default function UpdatePolicy() {
             </div>
             <div className="form-group">
               <label htmlFor="modeloCelular" className="form-label">
-                Cell Phone Model
+                Modelo de Celular
               </label>
               <input
                 id="modeloCelular"
@@ -193,7 +193,7 @@ export default function UpdatePolicy() {
         )}
 
         <button type="submit" className="btn btn-primary">
-          Update Policy
+          Actualizar Poliza
         </button>
       </form>
     </div>

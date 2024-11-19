@@ -8,7 +8,7 @@ export default function CreatePolicy() {
     fechaInicio: '',
     fechaVencimiento: '',
     monto: '',
-    usuarioId: '',
+    usuarioId: 1,
     marcaAuto: '',
     modeloAuto: '',
     direccionInmueble: '',
@@ -34,11 +34,11 @@ export default function CreatePolicy() {
 
   return (
     <div className="card">
-      <h2 className="card-title">Create New Insurance Policy</h2>
+      <h2 className="card-title">Crear Nueva Poliza de Seguro</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="tipo" className="form-label">
-            Type
+            Tipo
           </label>
           <select
             id="tipo"
@@ -48,7 +48,7 @@ export default function CreatePolicy() {
             onChange={handleChange}
             required
           >
-            <option value="">Select type</option>
+            <option value="">Selecccionar tipo</option>
             <option value="AUTO">AUTO</option>
             <option value="INMUEBLE">INMUEBLE</option>
             <option value="CELULAR">CELULAR</option>
@@ -56,7 +56,7 @@ export default function CreatePolicy() {
         </div>
         <div className="form-group">
           <label htmlFor="fechaInicio" className="form-label">
-            Start Date
+            Fecha de Inicio
           </label>
           <input
             id="fechaInicio"
@@ -70,7 +70,7 @@ export default function CreatePolicy() {
         </div>
         <div className="form-group">
           <label htmlFor="fechaVencimiento" className="form-label">
-            Expiration Date
+            Fecha de Vencimiento
           </label>
           <input
             id="fechaVencimiento"
@@ -84,7 +84,7 @@ export default function CreatePolicy() {
         </div>
         <div className="form-group">
           <label htmlFor="monto" className="form-label">
-            Amount
+            Monto
           </label>
           <input
             id="monto"
@@ -98,7 +98,7 @@ export default function CreatePolicy() {
         </div>
         <div className="form-group">
           <label htmlFor="usuarioId" className="form-label">
-            User ID
+            ID de Usuario
           </label>
           <input
             id="usuarioId"
@@ -106,7 +106,7 @@ export default function CreatePolicy() {
             type="number"
             className="form-input"
             value={policy.usuarioId}
-            onChange={handleChange}
+            onChange={handleChange}            
             required
           />
         </div>
@@ -116,7 +116,7 @@ export default function CreatePolicy() {
           <>
             <div className="form-group">
               <label htmlFor="marcaAuto" className="form-label">
-                Car Brand
+                Marca de Auto
               </label>
               <input
                 id="marcaAuto"
@@ -129,7 +129,7 @@ export default function CreatePolicy() {
             </div>
             <div className="form-group">
               <label htmlFor="modeloAuto" className="form-label">
-                Car Model
+                Modelo de Auto
               </label>
               <input
                 id="modeloAuto"
@@ -148,7 +148,7 @@ export default function CreatePolicy() {
           <>
             <div className="form-group">
               <label htmlFor="direccionInmueble" className="form-label">
-                Property Address
+              Dirección de Inmueble
               </label>
               <input
                 id="direccionInmueble"
@@ -161,7 +161,7 @@ export default function CreatePolicy() {
             </div>
             <div className="form-group">
               <label htmlFor="areaInmueble" className="form-label">
-                Property Area (sq ft)
+                Area de Inmueble
               </label>
               <input
                 id="areaInmueble"
@@ -180,7 +180,7 @@ export default function CreatePolicy() {
           <>
             <div className="form-group">
               <label htmlFor="marcaCelular" className="form-label">
-                Phone Brand
+                Marca de Celular
               </label>
               <input
                 id="marcaCelular"
@@ -193,7 +193,7 @@ export default function CreatePolicy() {
             </div>
             <div className="form-group">
               <label htmlFor="modeloCelular" className="form-label">
-                Phone Model
+                Modelo de Celular
               </label>
               <input
                 id="modeloCelular"
@@ -208,7 +208,7 @@ export default function CreatePolicy() {
         )}
 
         <button type="submit" className="btn btn-primary">
-          Create Policy
+          Crear Poliza
         </button>
       </form>
     </div>

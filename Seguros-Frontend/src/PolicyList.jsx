@@ -31,7 +31,7 @@ export default function PolicyList() {
 
   return (
     <div className="card">
-      <h2 className="card-title">Insurance Policies</h2>
+      <h2 className="card-title">Listado de Polizas de Seguro</h2>
       <div className="policy-list">        
         {policies.map((policy) => (
           <PolicyItem key={policy.id} policy={policy} onDelete={handleDelete} />
@@ -40,7 +40,7 @@ export default function PolicyList() {
       
       <div className="card-footer">
         <Link to="/create" className="btn btn-primary">
-          Create New Policy
+          Crear Nueva Poliza
         </Link>
       </div>
     </div>
