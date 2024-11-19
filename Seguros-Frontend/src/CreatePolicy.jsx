@@ -16,6 +16,8 @@ export default function CreatePolicy() {
     marcaCelular: '',
     modeloCelular: ''
   })
+  const [emailSentMessage, setEmailSentMessage] = useState(false)
+
   const navigate = useNavigate()
 
   const handleChange = (e) => {
@@ -26,7 +28,12 @@ export default function CreatePolicy() {
     e.preventDefault()
     try {
       await axios.post('http://localhost:8080/segurosAPI/v1/polizas', policy)
-      navigate('/policies')
+      
+      setEmailSentMessage(true)
+      setTimeout(() => {
+        navigate('/policies')
+      }, 3000)
+
     } catch (error) {
       console.error('Failed to create policy:', error)
     }
@@ -211,6 +218,15 @@ export default function CreatePolicy() {
           Crear Poliza
         </button>
       </form>
+    
+      {emailSentMessage && (
+        <div className="email-confirmation">
+          Correo electrónico enviado al cliente con el detalle de la póliza.
+        </div>
+      )}
+
     </div>
+
+    
   )
 }

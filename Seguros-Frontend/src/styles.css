@@ -101,3 +101,49 @@ body {
     gap: 0.5rem;
     margin-top: 1rem;
   }
+
+  /* Filters Styles */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filters select,
+.filters input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.filters select {
+  cursor: pointer;
+}
+
+.filters input {
+  flex-grow: 2;
+}
+
+.email-confirmation {
+  position: fixed; 
+  top: 20px; 
+  right: 20px; 
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  z-index: 1000;   
+}
+
+
+
+

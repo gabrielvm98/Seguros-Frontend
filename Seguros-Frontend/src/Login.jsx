@@ -25,7 +25,7 @@ export default function Login({ setIsLoggedIn }) {
 
   return (
     <div className="card">
-      <h2 className="card-title">Inicio de Sesion</h2>
+      <h2 className="card-title">Login</h2>
       <form onSubmit={handleLogin}>
 
         <div className="form-group">

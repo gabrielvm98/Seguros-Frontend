@@ -2,6 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function PolicyItem({ policy, onDelete }) {
+
+  const handleDelete = () => {
+    if (window.confirm('¿Estás seguro de que deseas eliminar esta póliza? Esta acción no se puede deshacer.')) {
+      onDelete(policy.id)
+    }
+  }
+
   return (
     <div className="card">
       <h3>Seguro de {policy.tipo}</h3>
@@ -36,7 +43,7 @@ export default function PolicyItem({ policy, onDelete }) {
           Actualizar
         </Link>
 
-        <button onClick={() => onDelete(policy.id)} className="btn btn-danger">
+        <button onClick={handleDelete} className="btn btn-danger">
           Borrar
         </button>
 
