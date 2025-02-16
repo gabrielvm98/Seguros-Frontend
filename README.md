@@ -1,2 +1,0 @@
-# Seguros-Frontend
-Seguros-Frontend
